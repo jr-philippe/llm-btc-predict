@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefeuille Bitcoin</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .wallet {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wallet">
+            <h2>Portefeuille</h2>
+            <p>BTC : 0.5</p>
+            <p>USDC : $1000</p>
+            <p>Prix actuel BTC: $40000</p>
+        </div>
+        <div class="button-container">
+            <button id="startTrading">Lancer le trading auto sur 7j</button>
+            <button>Historique du BTC</button>
+            <button>Historique du trading</button>
+        </div>
+    </div>
+    <div class="notification" id="notification"></div>
+
+    <script>
+        const startTradingButton = document.getElementById('startTrading');
+        const notification = document.getElementById('notification');
+
+        startTradingButton.addEventListener('click', () => {
+            notification.innerText = 'Auto-trading lancé';
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
